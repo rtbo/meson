@@ -43,13 +43,12 @@ jobs:
   pool:
     vmImage: VS2017-Win2016
 
-  strategy:
-    matrix:
-        vc2017x86ninja:
-          arch: x86
-          compiler: msvc2017
-          backend: ninja
-          MESON_RSP_THRESHOLD: 0
+  variables:
+    arch: x86
+    compiler: msvc2017
+    backend: ninja
+    MESON_RSP_THRESHOLD: 0
+
   steps:
   - task: UsePythonVersion@0
     inputs:
